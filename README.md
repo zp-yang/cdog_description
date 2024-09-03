@@ -3,7 +3,7 @@ quadruped urdf with ros2 and gazebo
 
 after building the package, run gz sim with
 ```
-ros2 launch cdog_description gz_sim.launch
+ros2 launch cdog_description gz_sim.launch.py
 ```
 
 ---
