@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot>
+    <!-- gz sim ground truth -->
+    <gazebo>
+        <plugin
+            filename="gz-sim-odometry-publisher-system"
+            name="gz::sim::systems::OdometryPublisher">
+            <dimensions>3</dimensions>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin
+            filename="gz-sim-pose-publisher-system"
+            name="gz::sim::systems::PosePublisher">
+            <publish_link_pose>true</publish_link_pose>
+            <publish_collision_pose>false</publish_collision_pose>
+            <publish_visual_pose>false</publish_visual_pose>
+            <publish_nested_model_pose>false</publish_nested_model_pose>
+        </plugin>
+    </gazebo>
+
+    <!-- sensors -->
+    <gazebo>
+        <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu">
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin
+            filename="gz-sim-sensors-system"
+            name="gz::sim::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+    </gazebo>
+    <!-- joinit control -->
+    <gazebo>
+        <plugin
+            filename="gz-sim-joint-controller-system"
+            name="gz::sim::systems::JointController">
+            <joint_name>LF_HAA</joint_name>
+            <joint_name>LF_HFE</joint_name>
+            <joint_name>LF_KFE</joint_name>
+            <joint_name>LH_HAA</joint_name>
+            <joint_name>LH_HFE</joint_name>
+            <joint_name>LH_KFE</joint_name>
+            <joint_name>RF_HAA</joint_name>
+            <joint_name>RF_HFE</joint_name>
+            <joint_name>RF_KFE</joint_name>
+            <joint_name>RH_HAA</joint_name>
+            <joint_name>RH_HFE</joint_name>
+            <joint_name>RH_KFE</joint_name>
+            <use_actuator_msg>true</use_actuator_msg>
+            <actuator_number>0</actuator_number>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin
+            filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher">
+            <joint_name>LF_HAA</joint_name>
+            <joint_name>LF_HFE</joint_name>
+            <joint_name>LF_KFE</joint_name>
+            <joint_name>LH_HAA</joint_name>
+            <joint_name>LH_HFE</joint_name>
+            <joint_name>LH_KFE</joint_name>
+            <joint_name>RF_HAA</joint_name>
+            <joint_name>RF_HFE</joint_name>
+            <joint_name>RF_KFE</joint_name>
+            <joint_name>RH_HAA</joint_name>
+            <joint_name>RH_HFE</joint_name>
+            <joint_name>RH_KFE</joint_name>
+            <topic_name>cdog</topic_name>
+        </plugin>
+    </gazebo>
+
+</robot>
